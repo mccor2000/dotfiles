@@ -15,7 +15,8 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%r%f'
+RPROMPT+=" "
+zstyle ':vcs_info:git:*' formats '%F{yellow}%b%f'
 zstyle ':vcs_info:*' enable git
 
 # Aliases
@@ -28,9 +29,8 @@ alias tree='tree | lolcat'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-alias vim='nvim'
-alias vi='nvim'
-alias v='nvim'
+alias nv='nvim'
+alias v='vim'
 
 alias commit='git commit -m'
 alias co='git checkout'
@@ -48,3 +48,5 @@ source $ZSH/oh-my-zsh.sh
 tmux
 clear
 echo "Yooo, what's up.."
+alias pm2='/home/mccor/Learning/pm2/bin/pm2'
+alias pm2='/home/mccor/Learning/pm2/bin/pm2'
