@@ -5,22 +5,18 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		-- or                            , branch = '0.1.x',
+		'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-    use({
-      "folke/trouble.nvim",
-      config = function()
-          require("trouble").setup {
-              icons = false,
-              -- your configuration comes here
-              -- or leave it empty to use the default settings
-              -- refer to the configuration section below
-          }
-      end
-    })
+  use({
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup {
+        icons = false,
+      }
+    end
+  })
 
 	use({
 		'rose-pine/neovim',
@@ -30,10 +26,17 @@ return require('packer').startup(function(use)
 		end
 	})
 
+  use({
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  })
+
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use("nvim-treesitter/nvim-treesitter-context");
-    use("nvim-treesitter/playground")
-    use("theprimeagen/harpoon")
+  use("nvim-treesitter/nvim-treesitter-context");
+  use("nvim-treesitter/playground")
+  use("theprimeagen/harpoon")
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
@@ -52,7 +55,19 @@ return require('packer').startup(function(use)
 		}
 	}
 
-    use("github/copilot.vim")
-    use("folke/zen-mode.nvim")
-    use("eandrju/cellular-automaton.nvim")
+  use("github/copilot.vim")
+
+  use {"folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {}
+    end
+  }
+  use {
+    'folke/twilight.nvim',
+    config = function()
+      require("twilight").setup {}
+    end
+  }
+
+  use("eandrju/cellular-automaton.nvim")
 end)

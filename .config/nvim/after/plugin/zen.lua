@@ -1,13 +1,21 @@
 vim.keymap.set("n", "<leader>zz", function()
     require("zen-mode").toggle({
         window = {
-            backdrop = 0.85,
+            backdrop = 0.75,
             width = 120,
             height = 1,
             options = { }
         },
         plugins = {
-            tmux = { enabled = false },
+          options = {
+            enabled = true,
+          },
+          tmux = { enabled = false },
+          twilight = { enabled = true },
         },
+        on_open = function(win)
+        end,
+        on_close = function()
+        end,
     })
 end)
