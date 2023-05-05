@@ -1,28 +1,41 @@
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
 
-vim.opt.smartindent = true
+vim.o.scrolloff = 8
+vim.o.signcolumn = 'yes'
 
-vim.opt.wrap = false
+vim.o.mouse = 'a'
+vim.o.clipboard = 'unnamedplus'
+vim.o.wrap = false
+vim.o.breakindent = true
+vim.o.smartindent = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+-- Save undo, no swap
+vim.o.undofile = true
+vim.o.swapfile = false
+vim.o.backup = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+-- Off search highlight
+vim.o.hlsearch = false
+vim.o.incsearch = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+-- Search case insensitive
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
-vim.opt.updatetime = 50
+-- Decrease update time
+vim.o.updatetime = 250
+vim.o.timeout = true
+vim.o.timeoutlen = 300
 
-vim.g.mapleader = " "
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
+vim.g.mapleader = ' '

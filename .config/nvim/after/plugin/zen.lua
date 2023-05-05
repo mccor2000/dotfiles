@@ -11,7 +11,6 @@ vim.keymap.set("n", "<leader>zz", function()
             enabled = true,
           },
           tmux = { enabled = false },
-          twilight = { enabled = true },
         },
         on_open = function(win)
         end,
