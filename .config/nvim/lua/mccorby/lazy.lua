@@ -89,5 +89,8 @@ require('lazy').setup({
     end
   },
   'eandrju/cellular-automaton.nvim',
+  -- Error/Warning message
   'folke/trouble.nvim',
+  -- Icons
+  'nvim-tree/nvim-web-devicons'
 })

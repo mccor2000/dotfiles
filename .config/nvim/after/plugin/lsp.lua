@@ -100,7 +100,6 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    
     -- for copilot
     ['<Tab>'] = nil,
     ['<S-Tab>'] = nil,
